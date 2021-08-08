@@ -1,0 +1,25 @@
+#include <stdio.h>
+void printFibonacci(int n)
+{
+    static int n1 = 0, n2 = 1, n3;
+
+    if (n > 0)
+    {
+        n3 = n1 + n2;
+        n1 = n2;
+        n2 = n3;
+        if (n == 1)
+        {
+            printf("Fibonacci number is %d ", n3);
+        }
+        printFibonacci(n - 1);
+    }
+}
+int main()
+{
+    int n;
+    printf("Enter the nth number: ");
+    scanf("%d", &n);
+    printFibonacci(n - 2);
+    return 0;
+}
